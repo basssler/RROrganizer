@@ -1,0 +1,25 @@
+# fly.toml app configuration file generated for rro-python-book-categorizer on 2024-11-07T01:21:40-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = "rro-python-book-categorizer"
+primary_region = "dfw"
+
+[build]
+
+[http_service]
+  internal_port = 8501  # Set to match Streamlit's internal port
+  force_https = true
+  auto_stop_machines = "stop"
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[env]
+  PORT = "8501"  # Ensure Fly.io uses the correct port for Streamlit
+
+[[vm]]
+  memory = "1gb"
+  cpu_kind = "shared"
+  cpus = 1

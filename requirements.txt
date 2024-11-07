@@ -1,0 +1,9 @@
+gspread
+oauth2client
+python-dotenv
+pandas
+requests
+Pillow
+pyzbar
+google-cloud-vision
+streamlit
